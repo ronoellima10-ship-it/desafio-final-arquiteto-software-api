@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2f6fa3"/></marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#b75d1e"/></marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#187369"/></marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#17354d" flood-opacity="0.13"/></filter>
+    <style>
+      .title{font:700 31px Arial,sans-serif;fill:#15324b}.subtitle{font:16px Arial,sans-serif;fill:#60758a}.h{font:700 20px Arial,sans-serif}.m{font:15px Arial,sans-serif}.s{font:13px Arial,sans-serif}.line{fill:none;stroke-width:3}.label{font:700 13px Arial,sans-serif;fill:#274c66}
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="#ffffff"/>
+  <rect x="0" y="0" width="1600" height="12" fill="#176b87"/>
+  <text x="62" y="62" class="title">Partner Products API - C4 Nível 2: Contêineres</text>
+  <text x="64" y="95" class="subtitle">Visão de execução, responsabilidades e integrações</text>
+
+  <g class="box">
+    <rect x="55" y="337" width="270" height="150" rx="20" fill="#e8f1fa" stroke="#2f6fa3" stroke-width="3"/>
+    <circle cx="195" cy="381" r="14" fill="#2f6fa3"/><path d="M170 426c3-24 13-35 25-35s22 11 25 35" fill="#2f6fa3"/>
+    <text x="195" y="450" text-anchor="middle" class="h" fill="#15324b">Parceiro da empresa</text>
+    <text x="195" y="471" text-anchor="middle" class="s" fill="#415c70">Consumidor externo da API</text>
+  </g>
+
+  <rect x="380" y="145" width="915" height="630" rx="18" fill="#f7fafc" stroke="#9cb1c4" stroke-width="3" stroke-dasharray="10 8"/>
+  <rect x="380" y="145" width="915" height="48" rx="18" fill="#eaf1f6"/><rect x="380" y="175" width="915" height="18" fill="#eaf1f6"/>
+  <text x="408" y="177" class="h" fill="#274c66">Sistema Partner Products</text>
+
+  <g class="box">
+    <rect x="475" y="275" width="385" height="210" rx="16" fill="#176b87" stroke="#0e4f66" stroke-width="3"/>
+    <text x="668" y="326" text-anchor="middle" class="h" fill="#fff">API REST de Produtos</text>
+    <text x="668" y="356" text-anchor="middle" class="m" fill="#dceff6">Node.js 24 + Express 5</text>
+    <line x1="520" y1="377" x2="815" y2="377" stroke="#7fc3d4" stroke-width="1"/>
+    <text x="668" y="412" text-anchor="middle" class="m" fill="#fff">CRUD, contagem e consultas por ID/nome</text>
+    <text x="668" y="439" text-anchor="middle" class="m" fill="#fff">Validação, regras de negócio e respostas JSON</text>
+  </g>
+
+  <g class="box">
+    <ellipse cx="1080" cy="296" rx="105" ry="25" fill="#f8c691" stroke="#b75d1e" stroke-width="3"/>
+    <path d="M975 296v155c0 14 47 25 105 25s105-11 105-25V296" fill="#f4a261" stroke="#b75d1e" stroke-width="3"/>
+    <ellipse cx="1080" cy="451" rx="105" ry="25" fill="#e99449" stroke="#b75d1e" stroke-width="3"/>
+    <text x="1080" y="344" text-anchor="middle" class="h" fill="#4b2a12">Banco de Dados</text>
+    <text x="1080" y="371" text-anchor="middle" class="m" fill="#4b2a12">SQLite</text>
+    <text x="1080" y="409" text-anchor="middle" class="s" fill="#4b2a12">Produtos persistidos</text>
+    <text x="1080" y="430" text-anchor="middle" class="s" fill="#4b2a12">Restrições e índice por nome</text>
+  </g>
+
+  <g class="box">
+    <rect x="480" y="568" width="320" height="118" rx="15" fill="#2a9d8f" stroke="#187369" stroke-width="3"/>
+    <text x="640" y="606" text-anchor="middle" class="h" fill="#fff">Documentação Interativa</text>
+    <text x="640" y="634" text-anchor="middle" class="m" fill="#e8fffb">OpenAPI 3.1 + Swagger UI</text>
+    <text x="640" y="660" text-anchor="middle" class="s" fill="#fff">/docs e /openapi.json</text>
+  </g>
+
+  <g class="box">
+    <rect x="890" y="563" width="330" height="128" rx="15" fill="#eef3f7" stroke="#7592a8" stroke-width="3"/>
+    <text x="1055" y="605" text-anchor="middle" class="h" fill="#274c66">Runtime e Operação</text>
+    <text x="1055" y="635" text-anchor="middle" class="m" fill="#425d70">Docker | Health check | Ambiente</text>
+    <text x="1055" y="661" text-anchor="middle" class="s" fill="#425d70">GitHub Actions executa os testes</text>
+  </g>
+
+  <path d="M320 412 H475" class="line" stroke="#2f6fa3" marker-end="url(#arrowBlue)"/>
+  <rect x="352" y="378" width="92" height="44" rx="8" fill="#fff"/>
+  <text x="398" y="397" text-anchor="middle" class="label">HTTPS / JSON</text><text x="398" y="414" text-anchor="middle" class="s" fill="#274c66">REST</text>
+  <path d="M860 379 H975" class="line" stroke="#b75d1e" marker-end="url(#arrowOrange)"/>
+  <text x="918" y="363" text-anchor="middle" class="label" fill="#704018">SQL</text>
+  <path d="M620 485 V568" class="line" stroke="#187369" marker-end="url(#arrowGreen)"/>
+  <text x="683" y="536" text-anchor="middle" class="label" fill="#175e57">expõe contrato</text>
+  <path d="M1000 563 V518 H820 V486" class="line" stroke="#7592a8" stroke-dasharray="9 7" marker-end="url(#arrowBlue)"/>
+  <text x="970" y="515" text-anchor="middle" class="label">executa e monitora</text>
+
+  <rect x="1330" y="232" width="220" height="245" rx="14" fill="#fff8e8" stroke="#d6a73a" stroke-width="2"/>
+  <text x="1350" y="267" class="h" fill="#614a16">Decisões principais</text>
+  <circle cx="1352" cy="305" r="4" fill="#d6a73a"/><text x="1366" y="310" class="s" fill="#614a16">API sem estado</text>
+  <circle cx="1352" cy="343" r="4" fill="#d6a73a"/><text x="1366" y="348" class="s" fill="#614a16">Persistência isolada</text>
+  <circle cx="1352" cy="381" r="4" fill="#d6a73a"/><text x="1366" y="386" class="s" fill="#614a16">Contrato em /api/v1</text>
+  <circle cx="1352" cy="419" r="4" fill="#d6a73a"/><text x="1366" y="424" class="s" fill="#614a16">Banco substituível</text>
+
+  <text x="65" y="855" class="s" fill="#71869a">Desafio Final - Bootcamp Arquiteto(a) de Software | Arquivo-fonte editável: docs/arquitetura.drawio</text>
+</svg>

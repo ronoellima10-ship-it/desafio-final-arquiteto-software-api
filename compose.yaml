@@ -1,0 +1,15 @@
+services:
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      DATABASE_PATH: /app/data/products.db
+      CORS_ORIGIN: "*"
+    volumes:
+      - product_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  product_data:

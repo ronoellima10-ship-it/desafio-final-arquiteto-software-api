@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-09-19T08:20:00.000Z" agent="ChatGPT Codex" version="24.7.17" type="device" compressed="false">
+  <diagram id="c4-container" name="C4 - Contêineres">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title1" value="Partner Products API - C4 Nível 2: Contêineres" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=28;fontStyle=1;fontColor=#15324B;" vertex="1" parent="1">
+          <mxGeometry x="60" y="35" width="1000" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="subtitle1" value="Visão de execução, responsabilidades e integrações" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=15;fontColor=#60758A;" vertex="1" parent="1">
+          <mxGeometry x="62" y="80" width="700" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="partner" value="&lt;b&gt;Parceiro da empresa&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot;&gt;Sistema ou desenvolvedor consumidor&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=18;fillColor=#E8F1FA;strokeColor=#2F6FA3;strokeWidth=2;fontSize=17;fontColor=#15324B;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="75" y="345" width="245" height="125" as="geometry"/>
+        </mxCell>
+        <mxCell id="boundary" value="Sistema Partner Products" style="swimlane;html=1;rounded=1;startSize=40;horizontal=1;fillColor=#F7FAFC;strokeColor=#9CB1C4;strokeWidth=2;dashed=1;fontSize=17;fontStyle=1;fontColor=#274C66;swimlaneFillColor=#EAF1F6;" vertex="1" parent="1">
+          <mxGeometry x="390" y="145" width="900" height="625" as="geometry"/>
+        </mxCell>
+        <mxCell id="api" value="&lt;b&gt;API REST de Produtos&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px&quot;&gt;Node.js 24 + Express 5&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot;&gt;CRUD, contagem e consultas por ID/nome&lt;br&gt;Validação, regras de negócio e respostas JSON&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#176B87;strokeColor=#0E4F66;strokeWidth=2;fontSize=19;fontColor=#FFFFFF;spacing=16;" vertex="1" parent="boundary">
+          <mxGeometry x="95" y="130" width="380" height="210" as="geometry"/>
+        </mxCell>
+        <mxCell id="database" value="&lt;b&gt;Banco de Dados&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px&quot;&gt;SQLite&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot;&gt;Produtos persistidos&lt;br&gt;Restrições e índice por nome&lt;/font&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#F4A261;strokeColor=#B75D1E;strokeWidth=2;fontSize=18;fontColor=#4B2A12;spacing=12;" vertex="1" parent="boundary">
+          <mxGeometry x="620" y="145" width="205" height="185" as="geometry"/>
+        </mxCell>
+        <mxCell id="openapi" value="&lt;b&gt;Documentação Interativa&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:14px&quot;&gt;OpenAPI 3.1 + Swagger UI&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot;&gt;/docs e /openapi.json&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#2A9D8F;strokeColor=#187369;strokeWidth=2;fontSize=17;fontColor=#FFFFFF;spacing=12;" vertex="1" parent="boundary">
+          <mxGeometry x="145" y="435" width="300" height="115" as="geometry"/>
+        </mxCell>
+        <mxCell id="runtime" value="&lt;b&gt;Runtime e Operação&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot;&gt;Docker | Health check | Variáveis de ambiente&lt;br&gt;GitHub Actions executa os testes a cada mudança&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#EEF3F7;strokeColor=#7592A8;strokeWidth=2;fontSize=16;fontColor=#274C66;spacing=12;" vertex="1" parent="boundary">
+          <mxGeometry x="530" y="430" width="310" height="125" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-partner-api" value="HTTPS / JSON&lt;br&gt;REST" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=3;strokeColor=#2F6FA3;fontSize=14;fontColor=#274C66;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="partner" target="api">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-api-db" value="SQL / transações" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=3;strokeColor=#B75D1E;fontSize=14;fontColor=#704018;labelBackgroundColor=#FFFFFF;" edge="1" parent="boundary" source="api" target="database">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-api-docs" value="expõe contrato" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#187369;fontSize=13;fontColor=#175E57;labelBackgroundColor=#FFFFFF;" edge="1" parent="boundary" source="api" target="openapi">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-runtime-api" value="executa e monitora" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;dashed=1;strokeColor=#7592A8;fontSize=13;fontColor=#4D687B;labelBackgroundColor=#FFFFFF;" edge="1" parent="boundary" source="runtime" target="api">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend1" value="&lt;b&gt;Decisões principais&lt;/b&gt;&lt;br&gt;• API sem estado; persistência isolada no Repository&lt;br&gt;• Contrato HTTP versionado em /api/v1&lt;br&gt;• SQLite substituível por outro banco sem alterar o Controller" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#FFF8E8;strokeColor=#D6A73A;strokeWidth=1;fontSize=13;fontColor=#614A16;spacing=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1325" y="230" width="225" height="240" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="mvc-components" name="MVC - Componentes">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title2" value="Partner Products API - Componentes MVC" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=28;fontStyle=1;fontColor=#15324B;" vertex="1" parent="1">
+          <mxGeometry x="60" y="35" width="1000" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="subtitle2" value="Fluxo de uma requisição e separação de responsabilidades" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=15;fontColor=#60758A;" vertex="1" parent="1">
+          <mxGeometry x="62" y="80" width="800" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="client" value="&lt;b&gt;Cliente HTTP&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot;&gt;Parceiro / Swagger&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=16;fillColor=#E8F1FA;strokeColor=#2F6FA3;strokeWidth=2;fontSize=17;fontColor=#15324B;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="55" y="270" width="180" height="105" as="geometry"/>
+        </mxCell>
+        <mxCell id="middleware" value="&lt;b&gt;Middlewares&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot;&gt;Request ID • Helmet&lt;br&gt;CORS • JSON&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#F5E8FF;strokeColor=#8A5AB5;strokeWidth=2;fontSize=16;fontColor=#4B286B;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="275" y="260" width="185" height="125" as="geometry"/>
+        </mxCell>
+        <mxCell id="routes" value="&lt;b&gt;Routes&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot;&gt;Método + URL&lt;br&gt;Despacho da operação&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#DFEEF8;strokeColor=#3B82A0;strokeWidth=2;fontSize=17;fontColor=#184A60;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="260" width="180" height="125" as="geometry"/>
+        </mxCell>
+        <mxCell id="controller" value="&lt;b&gt;Controller&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot;&gt;Entrada HTTP&lt;br&gt;Status e resposta JSON&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#176B87;strokeColor=#0E4F66;strokeWidth=2;fontSize=17;fontColor=#FFFFFF;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="720" y="260" width="190" height="125" as="geometry"/>
+        </mxCell>
+        <mxCell id="service" value="&lt;b&gt;Service&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot;&gt;Casos de uso&lt;br&gt;Regras de negócio&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#2A9D8F;strokeColor=#187369;strokeWidth=2;fontSize=17;fontColor=#FFFFFF;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="950" y="260" width="190" height="125" as="geometry"/>
+        </mxCell>
+        <mxCell id="repository" value="&lt;b&gt;Repository&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot;&gt;SQL e mapeamento&lt;br&gt;Abstração dos dados&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#E9C46A;strokeColor=#B88717;strokeWidth=2;fontSize=17;fontColor=#4A3710;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="260" width="190" height="125" as="geometry"/>
+        </mxCell>
+        <mxCell id="sqlite" value="&lt;b&gt;SQLite&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot;&gt;Tabela products&lt;br&gt;Índice e constraints&lt;/font&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#F4A261;strokeColor=#B75D1E;strokeWidth=2;fontSize=17;fontColor=#4B2A12;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1410" y="250" width="150" height="145" as="geometry"/>
+        </mxCell>
+        <mxCell id="model" value="&lt;b&gt;Model / Schemas&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot;&gt;Entidade Produto&lt;br&gt;Validação com Zod&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#FCE7EC;strokeColor=#C4526D;strokeWidth=2;fontSize=16;fontColor=#75283B;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="950" y="500" width="190" height="115" as="geometry"/>
+        </mxCell>
+        <mxCell id="errors" value="&lt;b&gt;Tratamento de Erros&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:13px&quot;&gt;404 • 409 • 422 • 500&lt;br&gt;Contrato padronizado&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#F4F6F8;strokeColor=#778A99;strokeWidth=2;dashed=1;fontSize=16;fontColor=#3B4C59;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="720" y="500" width="190" height="115" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge1" value="requisição" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#56758C;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="client" target="middleware"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#56758C;" edge="1" parent="1" source="middleware" target="routes"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge3" value="aciona" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#56758C;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="routes" target="controller"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge4" value="caso de uso" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#187369;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="controller" target="service"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge5" value="porta de dados" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#B88717;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="service" target="repository"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge6" value="SQL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#B75D1E;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="repository" target="sqlite"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge-model" value="valida entrada" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;dashed=1;strokeColor=#C4526D;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="service" target="model"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge-errors" value="converte exceções" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;dashed=1;strokeColor=#778A99;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="controller" target="errors"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="response" value="&lt;b&gt;Resposta&lt;/b&gt;&lt;br&gt;JSON + HTTP status" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#EAF7F2;strokeColor=#2A9D8F;strokeWidth=2;fontSize=15;fontColor=#175E57;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="390" y="665" width="220" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-response1" value="erro ou sucesso" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#2A9D8F;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="errors" target="response"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="edge-response2" value="retorno ao consumidor" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#2A9D8F;fontSize=12;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="response" target="client"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="note2" value="&lt;b&gt;MVC em API REST&lt;/b&gt;&lt;br&gt;Model = entidade + validação + persistência&lt;br&gt;Controller = adaptação HTTP e coordenação&lt;br&gt;View = representação JSON devolvida ao parceiro" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#FFF8E8;strokeColor=#D6A73A;strokeWidth=1;fontSize=13;fontColor=#614A16;spacing=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="500" width="380" height="150" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

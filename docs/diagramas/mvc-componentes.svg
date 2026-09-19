@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#56758c"/></marker>
+    <marker id="arrowG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2a9d8f"/></marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#17354d" flood-opacity="0.12"/></filter>
+    <style>.title{font:700 31px Arial,sans-serif;fill:#15324b}.subtitle{font:16px Arial,sans-serif;fill:#60758a}.h{font:700 18px Arial,sans-serif}.m{font:14px Arial,sans-serif}.s{font:12px Arial,sans-serif}.edge{fill:none;stroke:#56758c;stroke-width:2.5;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1600" height="900" fill="#fff"/><rect width="1600" height="12" fill="#176b87"/>
+  <text x="62" y="62" class="title">Partner Products API - Componentes MVC</text>
+  <text x="64" y="95" class="subtitle">Fluxo de uma requisição e separação de responsabilidades</text>
+
+  <g class="box"><rect x="35" y="270" width="170" height="120" rx="16" fill="#e8f1fa" stroke="#2f6fa3" stroke-width="3"/><text x="120" y="316" text-anchor="middle" class="h" fill="#15324b">Cliente HTTP</text><text x="120" y="345" text-anchor="middle" class="m" fill="#415c70">Parceiro</text><text x="120" y="368" text-anchor="middle" class="m" fill="#415c70">ou Swagger</text></g>
+  <g class="box"><rect x="245" y="260" width="185" height="140" rx="14" fill="#f5e8ff" stroke="#8a5ab5" stroke-width="3"/><text x="338" y="302" text-anchor="middle" class="h" fill="#4b286b">Middlewares</text><text x="338" y="334" text-anchor="middle" class="m" fill="#4b286b">Request ID • Helmet</text><text x="338" y="359" text-anchor="middle" class="m" fill="#4b286b">CORS • JSON</text></g>
+  <g class="box"><rect x="470" y="260" width="170" height="140" rx="14" fill="#dfeef8" stroke="#3b82a0" stroke-width="3"/><text x="555" y="302" text-anchor="middle" class="h" fill="#184a60">Routes</text><text x="555" y="334" text-anchor="middle" class="m" fill="#184a60">Método + URL</text><text x="555" y="359" text-anchor="middle" class="m" fill="#184a60">Despacho</text></g>
+  <g class="box"><rect x="680" y="260" width="180" height="140" rx="14" fill="#176b87" stroke="#0e4f66" stroke-width="3"/><text x="770" y="302" text-anchor="middle" class="h" fill="#fff">Controller</text><text x="770" y="334" text-anchor="middle" class="m" fill="#fff">Entrada HTTP</text><text x="770" y="359" text-anchor="middle" class="m" fill="#fff">Status + JSON</text></g>
+  <g class="box"><rect x="900" y="260" width="180" height="140" rx="14" fill="#2a9d8f" stroke="#187369" stroke-width="3"/><text x="990" y="302" text-anchor="middle" class="h" fill="#fff">Service</text><text x="990" y="334" text-anchor="middle" class="m" fill="#fff">Casos de uso</text><text x="990" y="359" text-anchor="middle" class="m" fill="#fff">Regras de negócio</text></g>
+  <g class="box"><rect x="1120" y="260" width="185" height="140" rx="14" fill="#e9c46a" stroke="#b88717" stroke-width="3"/><text x="1213" y="302" text-anchor="middle" class="h" fill="#4a3710">Repository</text><text x="1213" y="334" text-anchor="middle" class="m" fill="#4a3710">SQL + mapeamento</text><text x="1213" y="359" text-anchor="middle" class="m" fill="#4a3710">Abstração dos dados</text></g>
+  <g class="box"><ellipse cx="1460" cy="274" rx="95" ry="23" fill="#f8c691" stroke="#b75d1e" stroke-width="3"/><path d="M1365 274v115c0 13 43 23 95 23s95-10 95-23V274" fill="#f4a261" stroke="#b75d1e" stroke-width="3"/><ellipse cx="1460" cy="389" rx="95" ry="23" fill="#e99449" stroke="#b75d1e" stroke-width="3"/><text x="1460" y="325" text-anchor="middle" class="h" fill="#4b2a12">SQLite</text><text x="1460" y="351" text-anchor="middle" class="m" fill="#4b2a12">products</text><text x="1460" y="374" text-anchor="middle" class="s" fill="#4b2a12">índice + constraints</text></g>
+
+  <path d="M205 330H245" class="edge"/><path d="M430 330H470" class="edge"/><path d="M640 330H680" class="edge"/><path d="M860 330H900" class="edge"/><path d="M1080 330H1120" class="edge"/><path d="M1305 330H1365" class="edge"/>
+  <text x="225" y="240" text-anchor="middle" class="s" fill="#56758c">requisição</text><text x="660" y="240" text-anchor="middle" class="s" fill="#56758c">aciona</text><text x="880" y="240" text-anchor="middle" class="s" fill="#187369">caso de uso</text><text x="1100" y="240" text-anchor="middle" class="s" fill="#8c6813">porta</text><text x="1335" y="240" text-anchor="middle" class="s" fill="#b75d1e">SQL</text>
+
+  <g class="box"><rect x="680" y="520" width="180" height="120" rx="14" fill="#f4f6f8" stroke="#778a99" stroke-width="3" stroke-dasharray="8 6"/><text x="770" y="559" text-anchor="middle" class="h" fill="#3b4c59">Erros</text><text x="770" y="589" text-anchor="middle" class="m" fill="#3b4c59">404 • 409 • 422 • 500</text><text x="770" y="614" text-anchor="middle" class="s" fill="#3b4c59">Contrato padronizado</text></g>
+  <g class="box"><rect x="900" y="520" width="180" height="120" rx="14" fill="#fce7ec" stroke="#c4526d" stroke-width="3"/><text x="990" y="559" text-anchor="middle" class="h" fill="#75283b">Model</text><text x="990" y="589" text-anchor="middle" class="m" fill="#75283b">Entidade Produto</text><text x="990" y="614" text-anchor="middle" class="s" fill="#75283b">Validação com Zod</text></g>
+  <path d="M770 400V520" fill="none" stroke="#778a99" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/><path d="M990 400V520" fill="none" stroke="#c4526d" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <text x="720" y="470" class="s" fill="#536773">converte exceções</text><text x="1005" y="470" class="s" fill="#9a3f55">valida entrada</text>
+
+  <g class="box"><rect x="390" y="680" width="235" height="85" rx="14" fill="#eaf7f2" stroke="#2a9d8f" stroke-width="3"/><text x="508" y="714" text-anchor="middle" class="h" fill="#175e57">Resposta</text><text x="508" y="741" text-anchor="middle" class="m" fill="#175e57">JSON + HTTP status</text></g>
+  <path d="M680 580H620V680" fill="none" stroke="#2a9d8f" stroke-width="2.5" marker-end="url(#arrowG)"/><path d="M390 722H120V390" fill="none" stroke="#2a9d8f" stroke-width="2.5" marker-end="url(#arrowG)"/>
+
+  <rect x="1130" y="515" width="405" height="165" rx="14" fill="#fff8e8" stroke="#d6a73a" stroke-width="2"/>
+  <text x="1153" y="551" class="h" fill="#614a16">MVC em API REST</text>
+  <text x="1153" y="585" class="m" fill="#614a16">Model = entidade, validação e persistência</text>
+  <text x="1153" y="616" class="m" fill="#614a16">Controller = adaptação HTTP e coordenação</text>
+  <text x="1153" y="647" class="m" fill="#614a16">View = representação JSON devolvida</text>
+  <text x="65" y="855" class="s" fill="#71869a">Desafio Final - Bootcamp Arquiteto(a) de Software | Arquivo-fonte editável: docs/arquitetura.drawio</text>
+</svg>
